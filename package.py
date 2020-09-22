@@ -6,21 +6,19 @@ description = "Render rich text, tables, progress bars, " \
 
 version = "6.0.0"
 
-requires = [
-    "colorama-0.4.0+<0.5.0",
-    "commonmark-0.9.0+<0.10.0",
-    "pygments-2.6.0+<3.0.0",
-    "typing_extensions-3.7.4+<4.0.0",
-    # "dataclasses-0.7+<0.8",  # only required in Python-3.6
-]
+requires = []
 
 variants = [
-    ["python-3"],
+    ["python-3.6"],
+    ["python-3.7"],
 ]
 
+pip_packages = [
+    "rich==6.0.0",
+]
 
-private_build_requires = ["rezutil-1", "pipz"]
-build_command = "python -m rezutil build {root} --use-pipz"
+private_build_requires = ["pipz"]
+build_command = "install %s --bundle" % " ".join(pip_packages)
 
 
 def commands():
