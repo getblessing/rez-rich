@@ -9,7 +9,6 @@ version = "6.0.0"
 requires = []
 
 variants = [
-    ["python-3.6"],
     ["python-3.7"],
 ]
 
